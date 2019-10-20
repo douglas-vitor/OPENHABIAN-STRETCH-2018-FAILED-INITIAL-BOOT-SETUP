@@ -1,8 +1,10 @@
 # OPENHABIAN-STRETCH-2018-FAILED-INITIAL-BOOT-SETUP
 OPENHABIAN STRETCH 2018 FAILED INITIAL BOOT SETUP ON RASPBERRY PI 3B+
+
 DEVICE: RPI 3B+
 
 user : openhabian
+
 pass : openhabian
 
 ====================================
