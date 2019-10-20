@@ -20,6 +20,21 @@ sudo /boot/./first-boot.sh
 
 [erro java zulu failed - resolvido]
 
+edite o arquivo /opt/openhabian/functions/java-jre.bash
+linha 87
+
+sudo nano /opt/openhabian/functions/java-jre.bash
+
+substitua a linha:
+
+cond_redirect wget -nv -O "$jdkTempLocation"/zulu8.tar.gz "$link"
+
+por
+
+cond_redirect wget -nv -O "$jdkTempLocation"/zulu8.tar.gz "https://cdn.azul.com/zulu-embedded/bin/zulu8.40.0.178-ca-jdk1.8.0_222-linux_aarch32hf.tar.gz"
+
+*SALVE E FECHE O ARQUIVO
+
 sudo openhabian-config
 
 	(60) MANUAL/FRESH SETUP
