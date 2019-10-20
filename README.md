@@ -37,6 +37,7 @@ sudo openhabian-config
 sudo reboot
 
 sudo mv /boot/first-boot.sh /boot/first-boot.sh.dist
+
 sudo mv /boot/first-boot.log /boot/first-boot.log.dist
 
 sudo openhabian-config
