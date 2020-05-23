@@ -1,41 +1,48 @@
 # OPENHABIAN-STRETCH-2018-FAILED-INITIAL-BOOT-SETUP
-OPENHABIAN STRETCH 2018 FAILED INITIAL BOOT SETUP ON RASPBERRY PI 3B+
+###### OPENHABIAN STRETCH 2018 FAILED INITIAL BOOT SETUP ON RASPBERRY PI 3B/3B+
+*Passos para correção do erro de configuração inicial do boot no Openhabian Stretch*
 
-DEVICE: RPI 3B+
+**DEVICE:** RPI 3B
 
-user : openhabian
+**user** : openhabian
 
-pass : openhabian
+**pass** : openhabian
 
-====================================
-OPENHABIAN FAILED INITIAL BOOT SETUP
-=====================================
+## OPENHABIAN FAILED INITIAL BOOT SETUP
 
-[erro no myself failed - resolvido]
+###### [erro no myself failed - resolvido]
 
+```
 sudo rm -rf /opt/openhabian
 
 sudo /boot/./first-boot.sh
+```
 
+###### [erro java zulu failed - resolvido]
 
-[erro java zulu failed - resolvido]
+*edite o arquivo /opt/openhabian/functions/java-jre.bash linha 87*
 
-edite o arquivo /opt/openhabian/functions/java-jre.bash
-linha 87
-
+```
 sudo nano /opt/openhabian/functions/java-jre.bash
+```
 
-substitua a linha:
+*Substitua a linha:*
 
+```
 cond_redirect wget -nv -O "$jdkTempLocation"/zulu8.tar.gz "$link"
+```
 
-por
+Por
 
+```
 cond_redirect wget -nv -O "$jdkTempLocation"/zulu8.tar.gz "https://cdn.azul.com/zulu-embedded/bin/zulu8.40.0.178-ca-jdk1.8.0_222-linux_aarch32hf.tar.gz"
+```
 
-*SALVE E FECHE O ARQUIVO
+*Salve e feche o arquivo.*
 
+```
 sudo openhabian-config
+```
 
 	(60) MANUAL/FRESH SETUP
 		|-> (62) PACKAGES
@@ -47,8 +54,9 @@ sudo openhabian-config
 		|-> (68) FIREMOTD
 		|-> (69) BASH&VIM SETTINGS
 
-*CONFIRME E CONTINUE CASO SEJA QUESTIONADO.
+*Confirme e continue caso seja questionado.*
 
+```
 sudo reboot
 
 sudo mv /boot/first-boot.sh /boot/first-boot.sh.dist
@@ -56,6 +64,7 @@ sudo mv /boot/first-boot.sh /boot/first-boot.sh.dist
 sudo mv /boot/first-boot.log /boot/first-boot.log.dist
 
 sudo openhabian-config
+```
 
 	OPÇÃO (01) UPDATE
 	OPÇÃO (02) UPDATE SYSTEM
